@@ -1,4 +1,13 @@
 <%= form_with model: prototype, local: true do |f|%>
+  <%# binding.pry %>
+  <%# 「<%」がつくとrubyの記述を埋め込んでいる%>
+  <%# 「<div...」とか「<a...」で始まると通常のHTML%>
+  <%# だからbinding.pryを埋める時は「<%」で書き始める（bind..もrubyの記述）%>
+  <%# ちなみに、コントローラー内では.newでインスタンスを作ってる
+      　　　→ _form内でbinding.pry仕掛けて中身チェックするとどのキーもnilで返ってくる%>
+  
+  <%#prototype :部分テンプレを使う先のキー名・newアクションのページでは@prototypeを指定
+  → newアクションで@prototypeを使うためにキー名で「prototype」として指定して、_form内（ココ）で使う%>
   <div class="field">
     <%= f.label :title, "プロトタイプの名称" %><br />
     <%= f.text_field :title, id:"prototype_title" %>
@@ -23,3 +32,4 @@
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
 <% end %>
+

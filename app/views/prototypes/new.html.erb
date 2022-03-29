@@ -4,6 +4,10 @@
       <h2 class="page-heading">新規プロトタイプ投稿</h2>
         <%# 部分テンプレートでフォームを表示する %>
       <%= render partial: "form", locals: { prototype: @prototype } %>  
+      <%# { prototype: @prototype } {部分テンプレ先のキー名: 対象とする変数}%>
+      <%# @prototype ...prototypesコントローラー内newアクションの中に記述あるよ%>
+      <%# ちなみに、コントローラー内では.newだけでインスタンスを作ってる
+      　　　→ _form内でbinding.pry仕掛けて中身チェックするとどのキーもnilで返ってくる%>
     </div>
   </div>
 </div>
